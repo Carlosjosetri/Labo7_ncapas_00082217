@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<table>
+		<thead>
+			<th>nombre</th>
+			<th>apellido</th>
+			<th>edad</th>
+			<th>estado</th>
+		</thead>
+		
+		<th:block th:each="estudiante, row: ${estudiantes}">
+			<tr>
+				<th th:text="${estudiante.codigoEstudiante}"/>
+				<th th:text="${estudiante.nombre}"/>
+				<th th:text="${estudiante.apellido}"/>
+				<th th:text="${estudiante.edad}"/>
+				<th th:text="${estudiante.estadoDelegate}"/>
+			</tr>
+		</th:block>
+	</table>
+	
+	<form th:action="@{/estudiante}">
+		<input type="submit" value="Regresar">
+	</form>
+</body>
+</html>
